@@ -1,0 +1,29 @@
+[package]
+name = "wgpu-sandbox2"
+version = "0.1.0"
+edition = "2021"
+resolver = "2"
+
+[dependencies]
+wgpu = { version = "0.18" }
+winit = { version = "0.28.7" }
+wgpu-subscriber = "0.1"
+futures-lite = "1.13"
+bytemuck = {version = "1.13", features = ["derive"]}
+env_logger = "0.10"
+log = "0.4.16"
+egui-wgpu = {version = "0.24", optional = true}
+egui-winit = {version = "0.24", optional = true}
+egui = { version = "0.24", optional = true }
+
+[dev-dependencies]
+egui = { version = "0.24" }
+
+[features]
+egui = ["dep:egui-wgpu", "dep:egui", "dep:egui-winit"]
+
+[[example]]
+name = "hello_world"
+
+[[example]]
+name = "hello_egui"
